@@ -1,0 +1,43 @@
+Task for SDE (Full Stack)
+
+Company A has an existing social media application and they want to introduce a new feature called “Events for you” that presents users with customized events/shows/concerts etc. 
+
+Events are produced and consumed by end users only. 
+An event can stretch for multiple days and each day it will have the same duration, 
+it should have contact details of organizers, 
+location of event, 
+entry fee if any and 
+prize if any. 
+
+Company also requires that the application should maintain and notify a set of users that are interested in a particular event about any important info like change in details of events or reminders related to that event. 
+
+For each event there should be an independent forum where users can meet and discuss anything. 
+
+Once the event is completed it should be removed from the feed. 
+
+Now this feature should be customizable for every user on the platform on the basis of 
+their location (by default upto 10km or if using hierarchical address -> his current city), 
+preferred timings (dates), 
+preferred budget. (you may add any other suitable parameters).
+
+
+Design a REST API for the feature that has said requirements and is efficient.
+(Assume and mention user model, any other missing information)
+(Mention the technologies used)
+
+
+{
+          "title" : "TS Concert ",
+          "description" : "music",
+          "type" : "Concert",
+          "organiser_id" : "123",
+          "organiser_contact" : "9560722361",
+          "start_date": "2002-12-09",
+          "end_date": "1995-05-18",
+          "start_time" : "02:45",
+          "end_time" : "03:45",
+          "prize": "none",
+          "entry_fee":100,
+          "latitude": -60,
+          "longitude": 60
+}

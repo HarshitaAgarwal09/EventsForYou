@@ -1,0 +1,101 @@
+-----------------------------------------------------------
+EVENT MODAL:
+-----------------------------------------------------------
+Event name,
+Event Type - event/show/concert 
+event start data, 
+event end data,
+event duration - timings,
+contact organizers,  // will be referred to user contact
+location,
+fee,
+prize,
+forum: Object reference
+
+-----------------------------------------------------------
+USER MODAL:
+-----------------------------------------------------------
+userid
+name
+contact
+location
+prefered_timings, //date
+prefered_budget,    
+
+-----------------------------------------------------------
+FORUM MODAL:
+-----------------------------------------------------------
+text
+userid
+
+
+-----------------------------------------------------------
+API:
+-----------------------------------------------------------
+//GET api/events - get all events
+//GET api/events/filter/:userid - filter according to users
+
+//GET api/event/:id - get event by id 
+//POST api/event/ - post event
+//DELETE api/event - delete event on times up (do something to automate)
+
+
+------------------------------------------------------------
+USER MODAL
+------------------------------------------------------------
+name 
+email
+password
+registeration date
+contact
+location in terms of geolocation
+preferred time (date)
+budget
+
+------------------------------------------------------------
+USER Routes
+------------------------------------------------------------
+GET  api/user/:id 
+-user_id to be passed as request params
+
+POST api/user
+-name, email, password, contact, latitude, longitude, preferred_time, budget to be passed as request body
+
+DELETE api/user/:id
+-user_id passed as request params
+
+
+------------------------------------------------------------
+EVENT MODAL
+------------------------------------------------------------
+title
+type
+description
+entry fee
+location in terms of geolocation
+organiser id 
+organiser contact
+start date (timestamp)
+end date (timestamp)
+daily start time
+daily end time
+prize
+interested users as Array
+forum id - id of forum associated with this event
+
+
+------------------------------------------------------------
+EVENT Routes
+------------------------------------------------------------
+GET  api/event/all 
+-get all the events present in the collection
+
+GET  api/event/filter
+-get all the events for a particular user based on their preferred time, budget and location (within 10kms)
+-user_id to be passed as request body
+
+GET  api/event/:id
+-get event of this particular event id
+-event it to be passed as request params
+
+POST api/event
