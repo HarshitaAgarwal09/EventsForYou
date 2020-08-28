@@ -20,11 +20,6 @@ const UserSchema = new Schema({
         // required: true,
     },
 
-    reg_date: {
-        type: Date,
-        default: Date.now
-    },
-
     contact: {
         type: Number,
         required: true
@@ -43,6 +38,11 @@ const UserSchema = new Schema({
     budget: {
         type: Number,
         required: true
+    },
+
+    createdOn: {
+        type: Date,
+        default: Date.now
     }
 })
 

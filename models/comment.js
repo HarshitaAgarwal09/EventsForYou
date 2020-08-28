@@ -17,7 +17,7 @@ const CommentSchema = new Schema({
         required: true
     },
 
-    date: {
+    createdOn: {
         type: Date,
         default: Date.now
     }

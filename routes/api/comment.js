@@ -19,7 +19,7 @@ router.get('/:id',
             const comment = await Comment.findById(comment_id);
             if (!comment) return res.status(404).json({ msg: "comment not found. Please enter the correct comment id", success: false });
 
-            res.status(200).json({ msg: "comment saved", comment: comment, success: true });
+            res.status(200).json({ comment: comment, success: true });
 
         } catch (e) {
             res.status(400).json({ msg: e.message, success: false });
@@ -27,7 +27,7 @@ router.get('/:id',
     })
 
 
-//@route POST
+//@route POST api/event/forum/comment
 router.post('/',
     [
         check('user_id').not().notEmpty().withMessage("User id is required"),

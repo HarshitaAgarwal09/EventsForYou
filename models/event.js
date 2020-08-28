@@ -73,6 +73,11 @@ const EventSchema = new Schema({
     forum_id: {
         type: Schema.Types.ObjectId,
         required: true
+    },
+
+    createdOn: {
+        type: Date,
+        default: Date.now
     }
 })
 

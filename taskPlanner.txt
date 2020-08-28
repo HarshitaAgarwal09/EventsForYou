@@ -1,69 +1,14 @@
------------------------------------------------------------
-EVENT MODAL:
------------------------------------------------------------
-Event name,
-Event Type - event/show/concert 
-event start data, 
-event end data,
-event duration - timings,
-contact organizers,  // will be referred to user contact
-location,
-fee,
-prize,
-forum: Object reference
-
------------------------------------------------------------
-USER MODAL:
------------------------------------------------------------
-userid
-name
-contact
-location
-prefered_timings, //date
-prefered_budget,    
-
------------------------------------------------------------
-FORUM MODAL:
------------------------------------------------------------
-text
-userid
-
-
------------------------------------------------------------
-API:
------------------------------------------------------------
-//GET api/events - get all events
-//GET api/events/filter/:userid - filter according to users
-
-//GET api/event/:id - get event by id 
-//POST api/event/ - post event
-//DELETE api/event - delete event on times up (do something to automate)
-
-
 ------------------------------------------------------------
 USER MODAL
 ------------------------------------------------------------
 name 
 email
 password
-registeration date
 contact
 location in terms of geolocation
 preferred time (date)
 budget
-
-------------------------------------------------------------
-USER Routes
-------------------------------------------------------------
-GET  api/user/:id 
--user_id to be passed as request params
-
-POST api/user
--name, email, password, contact, latitude, longitude, preferred_time, budget to be passed as request body
-
-DELETE api/user/:id
--user_id passed as request params
-
+createdOn
 
 ------------------------------------------------------------
 EVENT MODAL
@@ -82,20 +27,92 @@ daily end time
 prize
 interested users as Array
 forum id - id of forum associated with this event
+createdOn
+
+
+------------------------------------------------------------
+COMMENT MODAL
+------------------------------------------------------------
+forum id
+user id
+content
+createdOn
+
+
+------------------------------------------------------------
+FORUM MODAL
+------------------------------------------------------------
+event id
+createdOn
+
+
+
+------------------------------------------------------------
+USER Routes
+------------------------------------------------------------
+GET  api/user/:id 
+-user_id to be passed as request params
+
+POST api/user
+-name, email, password, contact, latitude, longitude, preferred_time, budget to be passed as request body
+
+DELETE api/user/:id
+-user_id passed as request params
 
 
 ------------------------------------------------------------
 EVENT Routes
 ------------------------------------------------------------
-GET  api/event/all 
+GET api/event/all 
 -get all the events present in the collection
 
-GET  api/event/filter
+GET api/event/filter
 -get all the events for a particular user based on their preferred time, budget and location (within 10kms)
 -user_id to be passed as request body
 
-GET  api/event/:id
+GET api/event/:id
 -get event of this particular event id
 -event it to be passed as request params
 
 POST api/event
+-post event
+-title, description, type, entry_fee, user_id, contact, start_time, end_time, prize, latitude, longitude, start_date, end_date  to be passed as request body
+
+DELETE api/event/:id
+-delete event  and the forum and comments related to this event
+-event it to be passed as request params
+
+------------------------------------------------------------
+COMMENT ROUTE
+------------------------------------------------------------
+GET api/event/forum/comment/:id
+-get comment via comment id
+-comment_id to be passed in params
+
+POST api/event/forum/comment
+-post comment 
+-user_id, forum_id, content to be passed as request body
+
+DELETE api/event/forum/comment/:id
+-DELETE comment via comment id
+-comment_id to be passed in params
+
+
+------------------------------------------------------------
+FORUM ROUTE
+------------------------------------------------------------
+GET /api/event/forum/:id
+-get all the comments belonging to this forum
+-pass forum_id as request params
+
+DELETE /api/event/forum/:id
+- delete the forum 
+-pass forum_id as request params
+
+
+------------------------------------------------------------
+INTERESTED USER ROUTE
+------------------------------------------------------------
+POST /api/event/interesteduser
+-add interested user to the event
+-event_id , user_id to be passed as request body

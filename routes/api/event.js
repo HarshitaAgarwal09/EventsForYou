@@ -49,7 +49,7 @@ router.get('/filter',
                         },
                         "distanceField": "distance",
                         "spherical": true,
-                        "maxDistance": 10000 //10km
+                        "maxDistance": 100000 //10km
                     },
                 },
 

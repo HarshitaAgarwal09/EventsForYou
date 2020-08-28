@@ -6,7 +6,7 @@ const ForumSchema = new Schema({
         type: Schema.Types.ObjectId
     },
 
-    date: {
+    createdOn: {
         type: Date,
         default: Date.now
     }
